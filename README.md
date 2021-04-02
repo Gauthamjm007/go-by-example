@@ -37,6 +37,13 @@ Basics
  ┣ 8.channel_concurrency
  ┃ 
  ┗ 9.multi_channel
+
+ Algorithms
+ ┗ Sort
+ ┃ ┗ BubbleSort
+ ┃ ┃ ┣ bubble_sort.go
+     ┗ bubble_sort_test.go
+
  ```
 
 

@@ -24,20 +24,24 @@ func TestAllBasicMethodOnArray(t *testing.T) {
 		}
 	}
 
-	if true {
-		err := arr.Insert(uint(3), 100)
-		arr.Print()
-		if err != nil {
-			t.Errorf("err:%+v", err)
-		}
+	errInsert := arr.Insert(uint(3), 100)
+	arr.Print()
+	if errInsert != nil {
+		t.Errorf("err:%+v", errInsert)
 	}
 
-	if true {
-		err := arr.InsertTailend(999)
-		arr.Print()
-		if err != nil {
-			t.Errorf("err:%+v", err)
+	errTailEnd := arr.InsertTailend(999)
+	arr.Print()
+	if errTailEnd != nil {
+		t.Errorf("err:%+v", errTailEnd)
+	}
+
+	for i := 9; i >= 0; i-- {
+		_, err := arr.Delete(uint(i))
+		if nil != err {
+			t.Fatal(err)
 		}
+		arr.Print()
 	}
 
 	arr.Print()

@@ -67,6 +67,19 @@ func (a *Array) InsertTailend(v int) error {
 	return a.Insert(uint(a.Len()), v)
 }
 
+func (a *Array) Delete(index uint) (int, error) {
+	if a.isIndexOutofRange(index) {
+		return 0, errors.New("index out of range")
+	}
+
+	v := a.data[index]
+	for i := index; i < uint(a.length-1); i++ {
+		a.data[i] = a.data[i+1]
+	}
+	a.length--
+	return v, nil
+}
+
 //Methods on Array to Print the Array
 
 func (a *Array) Print() {
