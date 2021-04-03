@@ -7,6 +7,8 @@ This Project is aimed to learn basic functions in golang to understand the golan
 
 
 ```
+
+
 Basics
  ┣ 1.variadic_function
  ┃ 
@@ -38,11 +40,23 @@ Basics
  ┃ 
  ┗ 9.multi_channel
 
- Algorithms
- ┗ Sort
- ┃ ┗ BubbleSort
+Algorithms
+ ┣ Sort
+ ┃ ┣ BubbleSort
  ┃ ┃ ┣ bubble_sort.go
-     ┗ bubble_sort_test.go
+ ┃ ┃ 
+ ┃ ┗ SelectionSort
+ ┃ ┃ ┣ selection_sort.go
+ ┃ ┃ 
+ ┗ StandardAlgorithms
+ ┃ ┣ fisherYatesShuffling.go
+ 
+
+ DataStructures
+ ┗ Arrays
+ ┃ ┣ array.go
+   ┗ array_test.go
+
 
  ```
 
