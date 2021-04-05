@@ -1,8 +1,8 @@
-package quicksort
+package merge_sort
 
 import "testing"
 
-func TestQuickSort(t *testing.T) {
+func TestMergeSort(t *testing.T) {
 
 	tests := []struct {
 		name string
@@ -20,9 +20,9 @@ func TestQuickSort(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			t.Log("Before quick sort", tt.arr)
-			quicksort(tt.arr)
-			t.Log("After quick sort", tt.arr)
+			t.Log("Before merge sort", tt.arr)
+			merge_sort(tt.arr)
+			t.Log("After merge sort", tt.arr)
 		})
 	}
 
