@@ -8,10 +8,10 @@ func TestRadixSort(t *testing.T) {
 		name string
 		arr  []int
 	}{
-		// {
-		// 	name: "test-1",
-		// 	arr:  []int{9, 8, 7, 6, 5, 4, 3, 2, 1, 0, 66},
-		// },
+		{
+			name: "test-1",
+			arr:  []int{9, 8, 7, 6, 5, 4, 3, 2, 1, 0, 66},
+		},
 		{
 			name: "test-2",
 			arr:  []int{2, 3, 1},
