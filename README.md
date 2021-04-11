@@ -46,15 +46,31 @@ Basics
 
 
 Algorithms
+ ┣ Cryptography
+ ┃ ┣ TripleDES
+ ┃ ┃ ┣ README.md
+ ┃ ┃ ┣ tripleDES.go
+ ┃   ┗ tripleDES_test.go
  ┣ Sort
  ┃ ┣ BubbleSort
  ┃ ┃ ┣ bubble_sort.go
- ┃ ┃
- ┃ ┗ SelectionSort
+ ┃ ┃ ┗ bubble_sort_test.go
+ ┃ ┣ MergeSort
+ ┃ ┃ ┣ merge_sort.go
+ ┃ ┃ ┗ merge_sort_test.go
+ ┃ ┣ QuickSort
+ ┃ ┃ ┣ quicksort.go
+ ┃ ┃ ┗ quicksort_test.go
+ ┃ ┣ RadixSort
+ ┃ ┃ ┣ radix_sort.go
+ ┃ ┃ ┗ radixsort_test.go
+ ┃ ┣ SelectionSort
  ┃ ┃ ┣ selection_sort.go
- ┃ ┃
+ ┃ ┃ ┗ selection_sort_test.go
+ ┃ ┗ readme.md
  ┗ StandardAlgorithms
  ┃ ┣ fisherYatesShuffling.go
+ ┃ ┗ fisherYeatesShuffling_test.go
 
 
  DataStructures
