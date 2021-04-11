@@ -24,4 +24,6 @@
 
 ![Block Diagram](img/tripleDES.jpg)
 
-#### :warning: &nbsp;DES is cryptographically broken and should not be used for secure applications.
+#### :warning: &nbsp;&nbsp; WARNING
+
+DES is cryptographically broken and should not be used for secure applications.
