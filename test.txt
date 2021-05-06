@@ -1,0 +1,27 @@
+Execute a docker container - docker exec -it pgacid psql -U postgres
+Count all the rows in the DB - select count(*) from temp;
+Sequential scan in postgres - explain select * from row_name;
+Sequential scan with sort - explain select * from row_name order by field_name;
+Index Scan - explain select * from grades where id=10;
+Index Scan by field_name - explain select field_name from row_name where id=10;
+
+
+Create Table - 
+
+create table school( name varchar(10), grade varchar(2),age integer, joindate date )
+
+Generate random string to a table - 
+ Insert into grades(g) select md5(random()::text) from generate_series(0,1000000);
+Generate random string of fixed length to a table - 
+ Insert into grades(g) select substr(md5(random()::text), 1, 2) from generate_series(0,1000000);
+
+ INSERT INTO school (name,grade,age,joindate)
+SELECT substr(md5(random()::text), 1, 10),substr(md5(random()::text), 1, 2),
+       (random() * 70 + 10)::integer,
+       DATE '2021-01-01' + (random() * 700)::integer
+FROM generate_series(1, 1000000);
+
+Create Index in postgres :
+
+create index on school(grade);
+
