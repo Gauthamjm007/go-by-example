@@ -19,9 +19,33 @@ Generate random string of fixed length to a table -
 SELECT substr(md5(random()::text), 1, 10),substr(md5(random()::text), 1, 2),
        (random() * 70 + 10)::integer,
        DATE '2021-01-01' + (random() * 700)::integer
-FROM generate_series(1, 1000000);
+FROM generate_series(0, 1000000);
 
 Create Index in postgres :
 
 create index on school(grade);
 
+
+
+Key vs Non Key Column
+
+Get Size of all SQL Data Table - select pg_relation_size(oid)/(1000*1000) || 'MB',relname from pg_class order by pg_relation_size(oid) desc;
+Create Index for grade but include Name field -  create index school_grade_idx on school(grade) include (name);
+After including name to search name using index - explain analyze select name from school where grade='88';
+
+Index Scan vs Index Only Scan 
+
+
+Crate index based on ID - create index id_idx on school(id);
+Example for Index Scan -  explain analyze select name from school  where id=7;
+Example for Index only Scan - explain analyze select id from school  where id=7;
+
+//Combine Database Indexes for better performance
+
+create a table - create table combinedb(a int,b int,c int);
+insert data - insert into combinedb(a,b,c) select (random()*1000)::integer, (random()*1000)::integer,(random()*1000)::integer from generate_series(0,1000000);
+crate index - create index on combinedb(a); create index on combinedb(b);
+for bit map index scan - explain analyze select c from combinedb where a = 70;
+for index only scan -  explain analyze select c from combinedb where a = 70 limit 2;
+composite index , combine index of both a and b -  create index on combinedb(a,b);
+Parallel Seq Scan - when combine index if you query for only a or b - if won't use a and b combined index - explain analyze select c from combinedb where b=300;
