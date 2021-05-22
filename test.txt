@@ -49,3 +49,9 @@ for bit map index scan - explain analyze select c from combinedb where a = 70;
 for index only scan -  explain analyze select c from combinedb where a = 70 limit 2;
 composite index , combine index of both a and b -  create index on combinedb(a,b);
 Parallel Seq Scan - when combine index if you query for only a or b - if won't use a and b combined index - explain analyze select c from combinedb where b=300;
+create concurrent inde - create index concurrently grade_idx on school(grade);
+
+
+Bloom Filter - 
+
+
