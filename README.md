@@ -1,6 +1,6 @@
 # Go Functions
 
-This Project is aimed to learn basic functions in Go to understand the Go better
+This Project is aimed to learn basic functions in Go to understand the Go better along with Data Structures and Algorithms
 
 ## File Structure
 
